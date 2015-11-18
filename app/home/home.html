@@ -1,0 +1,37 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-target="#search-filter-panel" aria-expanded="true" aria-controls="search-filter-panel">Filtrering</div>
+    <div class="panel-collapse collapse in" id="search-filter-panel">
+        <div class="panel-body">
+            <form novalidate role="form">
+                <div class="form-group">
+                    <label for="id-input">ID</label>
+                    <input type="text" id="id-input" ng-model="home.id" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="name-input">Name</label>
+                    <input type="text" id="name-input" ng-model="home.name" class="form-control" />
+                </div>
+                <input type="button" class="btn btn-primary" value="Skapa ({{home.name}})" ng-click="home.createValue()" />
+                <input type="button" class="btn btn-primary" value="Uppdatera ({{home.name}})" ng-click="home.updateValue()" />
+                <input type="button" class="btn btn-primary" value="Ta bort ({{home.name}})" ng-click="home.deleteValue()" />
+            </form>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Resultat</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="value in home.values">
+                <td>{{value.id}}</td>
+                <td>{{value.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
